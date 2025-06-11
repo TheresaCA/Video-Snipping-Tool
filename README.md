@@ -1,29 +1,41 @@
-# 🎥 Electron Screen Recorder
+#  Electron Screen Recorder
 
 A basic screen recording application built with **Electron.js** for Windows. This app allows you to capture your entire screen or a specific application window and save the recording to a file.
 
 ---
 
-## ✅ Features
+## Features
 
-- Capture full screen or individual windows
+- Capture full screen.
 - Record video using `desktopCapturer` API
-- Save recordings in formats like **MP4** or **WebM**
-- Cross-platform potential (currently focused on Windows)
+- Save recordings in formats like **WebM**
 
 ---
 
-## 🚀 How It Works
+## How It Works
 
-This project uses Electron’s built-in `desktopCapturer` API to access screen contents. Recordings are handled by the **MediaRecorder API**, and optionally converted to MP4 using `ffmpeg`.
+- User clicks "Start Recording"
+- App gets list of available screens/windows
+- User's browser asks for screen capture permission
+- MediaRecorder starts capturing video data
+- Data is collected in small "chunks"
+- User clicks "Stop Recording"
+- All chunks are combined into one video file
+- User chooses where to save the file
+- File is written to disk
+
+
 
 ---
 
-## 🛠️ Tech Stack
+## Program File Structure
 
-- [Electron.js](https://www.electronjs.org/)
-- HTML/CSS/JavaScript
-- MediaRecorder API
-- (Optional) ffmpeg for format conversion
-
----
+```
+your-project/
+├── main.js          # Main Electron process (backend)
+├── preload.js       # Security bridge between main and renderer
+├── renderer.js      # Frontend JavaScript (user interface logic)
+├── index.html       # User interface structure
+├── style.css        # User interface styling
+└── package.json     # Project configuration
+```
