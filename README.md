@@ -25,7 +25,15 @@ A basic screen recording application built with **Electron.js** for Windows. Thi
 - File is written to disk
 
 
+---
 
+## To Run Code
+
+- `npm install --save-dev electron`
+- `choco install ffmpeg`
+- `npm init -y`
+- `npm install electron`
+- `npm start` (If can't access run powershell as administrator, go to directory and run)
 ---
 
 ## Program File Structure
