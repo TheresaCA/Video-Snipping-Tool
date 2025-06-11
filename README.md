@@ -39,7 +39,7 @@ A basic screen recording application built with **Electron.js** for Windows. Thi
 ## Program File Structure
 
 ```
-your-project/
+code_final/
 ├── main.js          # Main Electron process (backend)
 ├── preload.js       # Security bridge between main and renderer
 ├── renderer.js      # Frontend JavaScript (user interface logic)
